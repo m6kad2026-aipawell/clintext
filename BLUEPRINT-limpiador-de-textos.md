@@ -3,7 +3,7 @@
 > **Versión:** 1.0
 > **Fecha:** 2026-07-07
 > **Estado:** DESPLEGADO — pendiente validación de uso real
-> **Live:** https://clintext-pawell-ai-brosh.vercel.app
+> **Live:** https://clintext-pawell.vercel.app
 > **Repo:** https://github.com/m6kad2026-aipawell/clintext
 > **Documentos Fuente:**
 >

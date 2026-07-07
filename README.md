@@ -1,6 +1,6 @@
 # Clintext
 
-🔗 **Live:** https://clintext-pawell-ai-brosh.vercel.app
+🔗 **Live:** https://clintext-pawell.vercel.app
 
 Limpiador de textos y enlaces — pega texto sucio, un click, sale texto limpio.
 
