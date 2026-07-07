@@ -2,7 +2,9 @@
 
 > **Versión:** 1.0
 > **Fecha:** 2026-07-07
-> **Estado:** MVP CONSTRUIDO — pendiente deploy y validación
+> **Estado:** DESPLEGADO — pendiente validación de uso real
+> **Live:** https://clintext-pawell-ai-brosh.vercel.app
+> **Repo:** https://github.com/m6kad2026-aipawell/clintext
 > **Documentos Fuente:**
 >
 > - Viability: `docs/planning/VIABILITY-limpiador-de-textos.md`
@@ -107,21 +109,31 @@ mi-limpiador-de-texto/
 > **Entregable:** La herramienta pública, accesible por URL, con analytics activo.
 > **Depende de:** Nada — el código ya funciona en local.
 
-- [ ] Inicializar git (`git init`, primer commit)
-- [ ] Crear repo en GitHub y hacer push
-- [ ] Conectar el repo a Vercel y hacer el primer deploy
-- [ ] Confirmar que Vercel Analytics queda activo automáticamente (o agregar `@vercel/analytics` si el proyecto no usa la integración nativa)
+- [x] Inicializar git (`git init`, primer commit)
+- [x] Crear repo en GitHub y hacer push (`m6kad2026-aipawell/clintext`, público)
+- [x] Conectar el repo a Vercel y hacer el primer deploy (auto-deploy activo en cada push a `master`)
+- [x] Vercel Analytics activado (`vercel project web-analytics`) + componente `<Analytics />` en `layout.tsx`
 - [x] Versionar el E2E de Playwright (`e2e/happy-path.spec.ts`) cubriendo: limpiar espacios + limpiar UTM + copiar, y extraer emails/links + copiar lista
-- [ ] Agregar favicon y OG image propios (actualmente usa los defaults de Next.js)
+- [x] Rebranding a "Clintext" (nombre, favicon dinámico, meta tags, `package.json`)
+- [ ] Agregar OG image propia (actualmente usa los defaults de Next.js)
 - [ ] Publicar en 1-2 comunidades (Product Hunt, r/webdev, Indie Hackers) — canal de adquisición inicial definido en el BMC
 - [ ] Smoke test manual en mobile real (Safari iOS + Chrome Android) — verificar que `navigator.clipboard` funciona en ambos
 
 ### Criterios de Aceptación del Lanzamiento
 
-- [ ] La URL pública carga en <1.8s (First Contentful Paint, target del Tech Spec)
-- [ ] Las 4 transformaciones funcionan en producción igual que en local
-- [ ] El toast de "Copiado" aparece en desktop y mobile
-- [ ] Vercel Analytics registra al menos la primera visita
+- [x] La URL pública carga y responde 200 (verificado con Playwright contra producción)
+- [x] Las 4 transformaciones funcionan en producción igual que en local (smoke test post-deploy sin errores de consola)
+- [ ] El toast de "Copiado" verificado específicamente en mobile real (solo se probó desktop/headless hasta ahora)
+- [ ] Vercel Analytics registra al menos la primera visita (activado, pendiente confirmar datos tras tráfico real)
+
+### Nota sobre Deployment Protection
+
+El equipo de Vercel (`pawell-ai-brosh`) tiene SSO Deployment Protection activada
+por defecto en proyectos nuevos, lo cual bloquearía el acceso público con un
+login de Vercel. Se desactivó explícitamente para este proyecto
+(`vercel project protection disable clintext --sso`) dado que Clintext es una
+herramienta pública sin datos sensibles — decisión confirmada con el usuario
+antes de aplicarla.
 
 ---
 

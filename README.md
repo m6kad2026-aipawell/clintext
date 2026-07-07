@@ -1,5 +1,7 @@
 # Clintext
 
+🔗 **Live:** https://clintext-pawell-ai-brosh.vercel.app
+
 Limpiador de textos y enlaces — pega texto sucio, un click, sale texto limpio.
 
 Quita espacios dobles, elimina parámetros de tracking de URLs (`utm_source`,
@@ -36,5 +38,6 @@ de lanzamiento está en `BLUEPRINT-limpiador-de-textos.md`.
 
 ## Deploy
 
-Proyecto pensado para desplegarse en [Vercel](https://vercel.com) — página
-estática, sin variables de entorno requeridas para el MVP.
+Desplegado en [Vercel](https://vercel.com) — página estática, sin variables
+de entorno requeridas. Auto-deploy conectado al repo de GitHub: cada push a
+`master` dispara un nuevo deploy de producción.
